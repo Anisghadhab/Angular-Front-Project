@@ -1,0 +1,26 @@
+<form [formGroup]="consultationForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+        <label>Start Time:</label>
+        <input type="datetime-local" formControlName="startTime" class="form-control" />
+    </div>
+    
+    <div class="form-group">
+        <label>End Time:</label>
+        <input type="datetime-local" formControlName="endTime" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Concerns:</label>
+        <input type="text" formControlName="concerns" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Diseases:</label>
+        <input type="text" formControlName="diseases" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Previous medication:</label>
+        <input type="checkbox" formControlName="previous" class="form-check-input" />
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
