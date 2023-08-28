@@ -6,6 +6,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-consultation-form',
   templateUrl: './consultation-form.component.html',
+  styleUrls: ['./consultation-form.component.css']
+
 })
 export class ConsultationFormComponent {
   consultationForm: FormGroup;
