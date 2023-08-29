@@ -20,4 +20,15 @@ export class ConsultationService {
   public createConsultation(consultation: Consultation): Observable<Consultation> {
     const url = `${this.apiServerUrl}/api/consultations`; // Adjust the endpoint as needed
     return this.http.post<Consultation>(url, consultation);
-  }}
+  }
+
+  public updateConsultationStatus(id: number, newStatus: string): Observable<Consultation> {
+    const updatedConsultation = { status: newStatus } as Consultation;
+    return this.http.put<Consultation>(`${this.apiServerUrl}/api/consultations/${id}`, updatedConsultation);
+  }
+  public getConsultationById(id: number): Observable<Consultation> {
+    return this.http.get<Consultation>(`${this.apiServerUrl}/api/consultations/${id}`);
+  }
+
+
+}

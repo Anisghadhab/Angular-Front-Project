@@ -1,4 +1,8 @@
+import { Address } from "../address/address";
 import { Consultation } from "../consultation/consultation";
+import { DoctorInformation } from "../doctor-information/doctor-information";
+import { Prescription } from "../prescription/prescription";
+import { Review } from "../review/review";
 
 export interface Doctor {
     id: number;
@@ -10,5 +14,9 @@ export interface Doctor {
     confirm: string;
     createdAt:Date;
     updatedAt:Date;
+    doctorInformations: DoctorInformation;
     doctorConsultations: Consultation [];
+    doctorReviews: Review[];
+    doctorPrescriptions: Prescription [];
+    address: Address;
 }

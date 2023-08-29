@@ -1,0 +1,25 @@
+<form [formGroup]="doctorInformationForm" (ngSubmit)="onSubmit()" class="needs-validation">
+    <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="number" class="form-control" formControlName="price">
+    </div>
+
+    <div class="form-group">
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="number" class="form-control" formControlName="phoneNumber">
+    </div>
+
+    <div class="form-group">
+        <label for="startTime">Start Time:</label>
+        <input type="datetime-local" class="form-control" id="startTime" formControlName="startTime">
+    </div>
+
+    <div class="form-group">
+        <label for="endTime">End Time:</label>
+        <input type="datetime-local" class="form-control" formControlName="endTime">
+    </div>
+
+    <!-- <input type="hidden" formControlName="doctorId"> -->
+
+    <button type="submit" class="btn btn-primary" [disabled]="doctorInformationForm.invalid">Submit</button>
+</form>

@@ -1,0 +1,26 @@
+<div class="card">
+    <div class="card-header">
+        Patient Information
+    </div>
+    <div class="card-body">
+        <p><strong>Full Name:</strong>
+            <!-- {{ consultation?.patient.fullName }} -->
+        </p>
+        <p><strong>Age:</strong>
+            <!-- {{ consultation?.patient.age }} -->
+        </p>
+        <p><strong>Gender:</strong>
+            <!-- {{ consultation?.patient.gender }} -->
+        </p>
+        <p><strong>Phone Number:</strong>
+            <!-- {{ consultation?.patient.phoneNumber }} -->
+        </p>
+        <p><strong>Concerns:</strong> {{ consultation?.concerns }}</p>
+        <p><strong>Start Time:</strong> {{ consultation?.startTime | date:'short' }}</p>
+        <p><strong>End Time:</strong> {{ consultation?.endTime | date:'short' }}</p>
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-success" (click)="acceptConsultation()">Accept</button>
+        <button class="btn btn-danger" (click)="declineConsultation()">Decline</button>
+    </div>
+</div>

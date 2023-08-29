@@ -13,6 +13,14 @@ import { RouterOutlet } from "@angular/router";
 import { LoginDoctorComponent } from './login-doctor/login-doctor.component';
 import { RegisterDoctorComponent } from './register-doctor/register-doctor.component';
 import { DashboardDoctorComponent } from './dashboard-doctor/dashboard-doctor.component';
+import { PatientInformationComponent } from './patient-information/patient-information.component';
+import { DoctorInformationComponent } from './doctor-information/doctor-information.component';
+import { NoteComponent } from './note/note.component';
+import { ReviewComponent } from './review/review.component';
+import { PrescriptionComponent } from './prescription/prescription.component';
+import { AddressComponent } from './address/address.component';
+import { MedicineComponent } from './medicine/medicine.component';
+import { PendingConsultationComponent } from './pending-consultation/pending-consultation.component';
 
 @NgModule({
     declarations: [
@@ -22,7 +30,15 @@ import { DashboardDoctorComponent } from './dashboard-doctor/dashboard-doctor.co
         PatientComponent,
         LoginDoctorComponent,
         RegisterDoctorComponent,
-        DashboardDoctorComponent
+        DashboardDoctorComponent,
+        PatientInformationComponent,
+        DoctorInformationComponent,
+        NoteComponent,
+        ReviewComponent,
+        PrescriptionComponent,
+        AddressComponent,
+        MedicineComponent,
+        PendingConsultationComponent
     ],
     providers: [],
     bootstrap: [AppComponent],

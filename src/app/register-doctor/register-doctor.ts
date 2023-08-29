@@ -10,5 +10,4 @@ export interface RegisterDoctor {
     confirmPassword: string;
     createdAt:Date;
     updatedAt:Date;
-    doctorConsultations: Consultation [];
 }

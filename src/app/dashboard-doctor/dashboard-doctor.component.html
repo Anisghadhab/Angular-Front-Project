@@ -2,30 +2,86 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-6">
             <div class="main-box clearfix">
                 <div class="table-responsive">
                     <table class="table user-list">
                         <thead>
                             <tr>
-                                <th><span>Full Name</span></th>
+                                <th><span>Patient Full Name </span></th>
                                 <th><span>Created at</span></th>
+                                <th><span>Age</span></th>
+                                <th><span>Gender</span></th>
+                                <th><span>status</span></th>
+
+
+
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let consultation of consultations">
+                            <tr *ngFor="let consultation of pendingConsultations">
                                 <!-- <h1>{{consultation.patient.firstName}}</h1> -->
                                 <td>
-                                    <a href="#" class="user-link">{{consultation}} </a>
+                                    <!-- {{consultation.patient.firstName}} -->
                                 </td>
                                 <td>
                                     {{consultation.createdAt}}
+                                </td>
+                                <td>
+                                    <!-- {{consultation.age}} -->
+                                </td>
+                                <td>
+                                    <!-- {{consultation.gender}} -->
+                                </td>
+                                <td>
+                                    <a [routerLink]="['/doctors/pending-consultation', consultation.id]">{{consultation.status}}</a>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
+
+            <div class="col-lg-6">
+                <div class="main-box clearfix">
+                    <h1>In Progress Consultations</h1>
+                    <div class="table-responsive">
+                        <table class="table user-list">
+                            <thead>
+                                <tr>
+                                    <th><span>Patient Full Name </span></th>
+                                    <th><span>Created at</span></th>
+                                    <th><span>Age</span></th>
+                                    <th><span>Gender</span></th>
+                                    <th><span>status</span></th>
+    
+    
+    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let consultation of acceptedConsultations">
+                                    <!-- <h1>{{consultation.patient.firstName}}</h1> -->
+                                    <td>
+                                        <!-- {{consultation.patient.firstName}} -->
+                                    </td>
+                                    <td>
+                                        {{consultation.createdAt}}
+                                    </td>
+                                    <td>
+                                        <!-- {{consultation.age}} -->
+                                    </td>
+                                    <td>
+                                        <!-- {{consultation.gender}} -->
+                                    </td>
+                                    <td>
+                                        <a [routerLink]="['/doctors/consultation', consultation.id]">{{consultation.status}}</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
         </div>
     </div>
 </div>
