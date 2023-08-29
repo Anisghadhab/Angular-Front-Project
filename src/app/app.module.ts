@@ -10,13 +10,19 @@ import { ConsultationFormComponent } from './consultation/consultation-form.comp
 import { PatientComponent } from './patient/patient.component';
 import { DoctorComponent } from './doctor/doctor.component';
 import { RouterOutlet } from "@angular/router";
+import { LoginDoctorComponent } from './login-doctor/login-doctor.component';
+import { RegisterDoctorComponent } from './register-doctor/register-doctor.component';
+import { DashboardDoctorComponent } from './dashboard-doctor/dashboard-doctor.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         DoctorComponent,
         ConsultationFormComponent,
-        PatientComponent
+        PatientComponent,
+        LoginDoctorComponent,
+        RegisterDoctorComponent,
+        DashboardDoctorComponent
     ],
     providers: [],
     bootstrap: [AppComponent],

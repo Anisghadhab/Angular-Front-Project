@@ -1,13 +1,13 @@
 import { Consultation } from "../consultation/consultation";
 
-export interface Doctor {
+export interface RegisterDoctor {
     id: number;
-    firstName:string;
+    firstName: string;
     lastName: string;
     proficiency: string;
     email: string;
     password: string;
-    confirm: string;
+    confirmPassword: string;
     createdAt:Date;
     updatedAt:Date;
     doctorConsultations: Consultation [];

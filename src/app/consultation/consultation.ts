@@ -9,5 +9,6 @@ export interface Consultation {
     concerns: string;
     doctor: Doctor;
     patient: Patient;
-    previous: boolean
+    previous: boolean;
+    createdAt: Date;
 }

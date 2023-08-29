@@ -1,5 +1,9 @@
 <form [formGroup]="consultationForm" (ngSubmit)="onSubmit()">
 
+
+    <input type="hidden" formControlName="doctor" [value]="doctor" />
+
+
     <div class="form-group">
         <label>Start Time:</label>
         <input type="datetime-local" formControlName="startTime" class="form-control" />
