@@ -29,6 +29,4 @@ export class ConsultationService {
   public getConsultationById(id: number): Observable<Consultation> {
     return this.http.get<Consultation>(`${this.apiServerUrl}/api/consultations/${id}`);
   }
-
-
 }

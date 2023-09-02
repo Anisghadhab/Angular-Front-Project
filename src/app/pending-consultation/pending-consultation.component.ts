@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Consultation } from '../consultation/consultation';
 import { ConsultationService } from '../consultation/consultation.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-pending-consultation',
@@ -14,7 +14,8 @@ export class PendingConsultationComponent implements OnInit {
 
   constructor(
     private consultationService: ConsultationService,
-    private route: ActivatedRoute // Inject ActivatedRoute
+    private route: ActivatedRoute, // Inject ActivatedRoute,
+    private router: Router
   ) { }
 
 
@@ -45,6 +46,8 @@ export class PendingConsultationComponent implements OnInit {
       this.consultationService.updateConsultationStatus(this.consultation.id, 'accepted').subscribe(
         (updatedConsultation: Consultation) => {
           this.consultation = updatedConsultation;
+          this.router.navigateByUrl('/doctors/dashboard');
+
         },
         (error) => {
           console.error(error);
@@ -58,6 +61,8 @@ export class PendingConsultationComponent implements OnInit {
       this.consultationService.updateConsultationStatus(this.consultation.id, 'declined').subscribe(
         (updatedConsultation: Consultation) => {
           this.consultation = updatedConsultation;
+          this.router.navigateByUrl('/doctors/dashboard');
+
         },
         (error) => {
           console.error(error);

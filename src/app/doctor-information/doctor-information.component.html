@@ -1,3 +1,6 @@
+<app-navbar-dashboard></app-navbar-dashboard>
+
+
 <form [formGroup]="doctorInformationForm" (ngSubmit)="onSubmit()" class="needs-validation">
     <div class="form-group">
         <label for="price">Price:</label>
@@ -23,3 +26,22 @@
 
     <button type="submit" class="btn btn-primary" [disabled]="doctorInformationForm.invalid">Submit</button>
 </form>
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Doctor Information</h5>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <strong>Price:</strong> {{oneDoctor}}
+            </li>
+            <li class="list-group-item">
+                <strong>Phone Number:</strong>
+            </li>
+            <li class="list-group-item">
+                <strong>Start Time:</strong> 
+            </li>
+            <li class="list-group-item">
+                <strong>End Time:</strong> 
+            </li>
+        </ul>
+    </div>
+</div>

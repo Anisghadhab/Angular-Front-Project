@@ -1,3 +1,6 @@
+<app-logout-button></app-logout-button>
+<app-navbar-dashboard></app-navbar-dashboard>
+
 <h1>New Consultations</h1>
 
 <div class="container">
@@ -13,25 +16,22 @@
                                 <th><span>Age</span></th>
                                 <th><span>Gender</span></th>
                                 <th><span>status</span></th>
-
-
-
                             </tr>
                         </thead>
                         <tbody>
                             <tr *ngFor="let consultation of pendingConsultations">
                                 <!-- <h1>{{consultation.patient.firstName}}</h1> -->
                                 <td>
-                                    <!-- {{consultation.patient.firstName}} -->
+                                    {{consultation.patient.firstName}} {{consultation.patient.lastName}}
                                 </td>
                                 <td>
-                                    {{consultation.createdAt}}
+                                    <p>{{ consultation.createdAt | date:'MMM dd, HH:mm' }}</p>
+                                </td>   
+                                <td>
+                                    {{consultation.patient.patientInformation.age}}
                                 </td>
                                 <td>
-                                    <!-- {{consultation.age}} -->
-                                </td>
-                                <td>
-                                    <!-- {{consultation.gender}} -->
+                                    {{consultation.patient.patientInformation.gender}}
                                 </td>
                                 <td>
                                     <a [routerLink]="['/doctors/pending-consultation', consultation.id]">{{consultation.status}}</a>
@@ -54,16 +54,13 @@
                                     <th><span>Age</span></th>
                                     <th><span>Gender</span></th>
                                     <th><span>status</span></th>
-    
-    
-    
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr *ngFor="let consultation of acceptedConsultations">
                                     <!-- <h1>{{consultation.patient.firstName}}</h1> -->
                                     <td>
-                                        <!-- {{consultation.patient.firstName}} -->
+                                        {{consultation.patient.firstName}} {{consultation.patient.lastName}}
                                     </td>
                                     <td>
                                         {{consultation.createdAt}}

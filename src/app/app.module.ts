@@ -21,6 +21,17 @@ import { PrescriptionComponent } from './prescription/prescription.component';
 import { AddressComponent } from './address/address.component';
 import { MedicineComponent } from './medicine/medicine.component';
 import { PendingConsultationComponent } from './pending-consultation/pending-consultation.component';
+import { PatientCardComponent } from './patient-card/patient-card.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { DiscussionComponent } from './discussion/discussion.component';
+import { CloseConsultationComponent } from './close-consultation/close-consultation.component';
+import { ProfileComponent } from './profile/profile.component';
+import { NavbarDashboardComponent } from './navbar-dashboard/navbar-dashboard.component';
+import { CompletedConsultationComponent } from './completed-consultation/completed-consultation.component';
+import { DeclinedConsultationComponent } from './declined-consultation/declined-consultation.component';
+import { MyAgendaComponent } from './my-agenda/my-agenda.component';
+import { SessionServiceComponent } from './session-service/session-service.component';
+import { LogoutButtonComponent } from './logout-button/logout-button.component';
 
 @NgModule({
     declarations: [
@@ -38,7 +49,18 @@ import { PendingConsultationComponent } from './pending-consultation/pending-con
         PrescriptionComponent,
         AddressComponent,
         MedicineComponent,
-        PendingConsultationComponent
+        PendingConsultationComponent,
+        PatientCardComponent,
+        NavBarComponent,
+        DiscussionComponent,
+        CloseConsultationComponent,
+        ProfileComponent,
+        NavbarDashboardComponent,
+        CompletedConsultationComponent,
+        DeclinedConsultationComponent,
+        MyAgendaComponent,
+        SessionServiceComponent,
+        LogoutButtonComponent,
     ],
     providers: [],
     bootstrap: [AppComponent],

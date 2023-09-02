@@ -15,7 +15,7 @@ export class DoctorService {
   public getDoctors(): Observable<Doctor[]> {
     return this.http.get<Doctor[]>(`${this.apiServerUrl}/api/doctors`);
   }
-  public getOneDoctor(doctorId: number): Observable<Doctor> {
+  public getOneDoctor(doctorId: any): Observable<Doctor> {
     return this.http.get<Doctor>(`${this.apiServerUrl}/api/doctors/${doctorId}`);
   }
   

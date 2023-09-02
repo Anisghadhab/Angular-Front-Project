@@ -4,6 +4,8 @@ import { RegisterDoctor } from './register-doctor'; // Make sure to import the D
 import { RegisterDoctorService } from './register-doctor.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router'; // Import the Router service
+import { SessionServiceComponent } from '../session-service/session-service.component';
+import { SessionServiceService } from '../session-service/session-service.service';
 
 @Component({
   selector: 'app-register-doctor',
@@ -14,10 +16,12 @@ export class RegisterDoctorComponent{
   registerForm: FormGroup ; // Define a FormGroup to manage the form
 
 
+
   constructor(
     private formBuilder: FormBuilder,
     private registerDoctorService: RegisterDoctorService,
-    private router: Router // Inject the Router service
+    private router: Router, // Inject the Router service
+    private sessionService: SessionServiceService
 
   ) {
 
@@ -38,8 +42,9 @@ export class RegisterDoctorComponent{
       this.registerDoctorService.registerDoctor(this.registerForm.value).subscribe(
         (response: RegisterDoctor) => {
           console.log(response);
+          this.sessionService.setDoctorId(response.id);
+          console.log(this.sessionService.getDoctorId())
           this.router.navigate(['/doctors/dashboard']);
-
         },
         (error: HttpErrorResponse) =>{
           alert(error.message);

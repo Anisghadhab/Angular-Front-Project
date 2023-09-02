@@ -1,0 +1,41 @@
+<app-navbar-dashboard></app-navbar-dashboard>
+<h1>Declined Consultations</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="main-box clearfix">
+                <div class="table-responsive">
+                    <table class="table user-list">
+                        <thead>
+                            <tr>
+                                <th><span>Patient Full Name </span></th>
+                                <th><span>Created at</span></th>
+                                <th><span>Age</span></th>
+                                <th><span>Gender</span></th>
+                                <th><span>status</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let consultation of declinedConsultations">
+                                <!-- <h1>{{consultation.patient.firstName}}</h1> -->
+                                <td>
+                                    {{consultation.patient.firstName}} {{consultation.patient.lastName}}
+                                </td>
+                                <td>
+                                    <p>{{ consultation.createdAt | date:'MMM dd, HH:mm' }}</p>
+                                </td>   
+                                <td>
+                                    {{consultation.patient.patientInformation.age}}
+                                </td>
+                                <td>
+                                    {{consultation.patient.patientInformation.gender}}
+                                </td>
+                                <td>
+                                    <a [routerLink]="['/doctors/pending-consultation', consultation.id]">{{consultation.status}}</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>

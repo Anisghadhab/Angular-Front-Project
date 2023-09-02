@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs'; // Don't forget to import Observable
 import { environment } from 'src/environnement/environment';
 import { LoginDoctor } from './login-doctor';
+import { Doctor } from '../doctor/doctor';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class LoginDoctorService {
   constructor(private http: HttpClient) { }
 
   // Assuming `LoginDoctor` is a model/interface for the doctor's login data
-  public logDoctor(loggedDoctor: LoginDoctor): Observable<LoginDoctor> {
-    return this.http.post<LoginDoctor>(`${this.apiServerUrl}/api/doctors/login`, loggedDoctor);
+  public logDoctor(loggedDoctor: Doctor): Observable<Doctor> {
+    return this.http.post<Doctor>(`${this.apiServerUrl}/api/doctors/login`, loggedDoctor);
   }
 }

@@ -14,5 +14,5 @@ export interface Patient {
     patientReviews: Review[];
     patientPrescriptions: Prescription[];
     patientConsultations: Consultation[];
-    information: PatientInformation
+    patientInformation: PatientInformation
 }
