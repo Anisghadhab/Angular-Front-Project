@@ -1,2 +1,21 @@
 <app-nav-bar [consultationId]="consultationId"></app-nav-bar>
-<p>prescription works!</p>
+<div class="container">
+    <h2>Prescription Form</h2>
+    <form [formGroup]="prescriptionForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="prescriptionFile">Upload Prescription (PDF only)</label>
+            <input type="file" id="prescriptionFile" formControlName="prescriptionFile"
+                (change)="onFileChange($event)" />
+            <small *ngIf="prescriptionForm.controls['prescriptionFile'].hasError('required')" class="text-danger">
+                Prescription file is required.
+            </small>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!prescriptionForm.valid">Upload</button>
+    </form>
+    <div *ngIf="successMessage" class="alert alert-success mt-3">
+        {{ successMessage }}
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+        {{ errorMessage }}
+    </div>
+</div>

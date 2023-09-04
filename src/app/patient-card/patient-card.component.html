@@ -5,16 +5,17 @@
     </div>
     <div class="card-body">
         <p><strong>Full Name:</strong>
-            <!-- {{ consultation?.patient.fullName }} -->
+            {{ consultation.patient.firstName }}{{ consultation.patient.lastName }}
+
         </p>
         <p><strong>Age:</strong>
-            <!-- {{ consultation?.patient.age }} -->
+            {{ consultation.patient.patientInformation.age }}
         </p>
         <p><strong>Gender:</strong>
-            <!-- {{ consultation?.patient.gender }} -->
+            {{ consultation.patient.patientInformation.gender }}
         </p>
         <p><strong>Phone Number:</strong>
-            <!-- {{ consultation?.patient.phoneNumber }} -->
+            {{ consultation.patient.patientInformation.phoneNumber }}
         </p>
         <p><strong>Concerns:</strong> {{ consultation.concerns }}</p>
         <p><strong>Start Time:</strong> {{ consultation.startTime | date:'short' }}</p>
