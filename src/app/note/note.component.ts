@@ -46,7 +46,7 @@ export class NoteComponent  {
 
   public addNote(): void  {
     console.log(this.noteForm.value)
-    this.noteService.createNote(this.noteForm.value).subscribe(
+    this.noteService.createNote(this.noteForm.value,this.consultationId ).subscribe(
       
       (response: Note) => {
         this.notes.push(response); // Add the new note to the notes array

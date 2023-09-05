@@ -17,6 +17,7 @@ import { DeclinedConsultationComponent } from './declined-consultation/declined-
 import { MyAgendaComponent } from './my-agenda/my-agenda.component';
 import { AuthGuard } from './auth-guard/auth-guard.component';
 import { DiscussionComponent } from './discussion/discussion.component';
+import { EditDoctorComponent } from './edit-doctor/edit-doctor.component';
 const routes: Routes = [
   { path: "patients", component: PatientComponent, canActivate: [AuthGuard]  },
   { path: "consultations", component: ConsultationFormComponent },
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'doctors/completed-consultation', component: CompletedConsultationComponent},
   { path: 'doctors/declined-consultation', component: DeclinedConsultationComponent},
   { path: 'doctors/agenda', component: MyAgendaComponent},
+  { path: 'doctors/edit', component: EditDoctorComponent},
   { path: 'doctors/discussion/:id', component: DiscussionComponent },
 
 

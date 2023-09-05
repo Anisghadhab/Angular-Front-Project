@@ -6,6 +6,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { SessionServiceService } from '../session-service/session-service.service';
 import { DoctorService } from '../doctor/doctor.service';
 import { Doctor } from '../doctor/doctor';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-doctor-information',
@@ -19,7 +20,9 @@ export class DoctorInformationComponent {
     private fb: FormBuilder,
     private doctorInformationService: DoctorInformationService,
     private sessionService: SessionServiceService,
-    private doctorService: DoctorService
+    private doctorService: DoctorService,
+    private router: Router // Inject the Router service
+
     
     
   ) { }
@@ -63,6 +66,9 @@ export class DoctorInformationComponent {
     )
   }
 
-
+  navigateToEditDoctor() {
+    // Assuming the route for the edit doctor page is 'doctors/edit'
+    this.router.navigate(['doctors/edit']);
+  }
 
 }

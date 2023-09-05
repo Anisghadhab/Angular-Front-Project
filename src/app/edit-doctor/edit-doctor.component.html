@@ -1,0 +1,22 @@
+<div class="edit-doctor">
+    <h2>Edit Doctor Information</h2>
+    <form [formGroup]="doctorFormInformation" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="price">Price:</label>
+            <input type="number" id="price" formControlName="price" required>
+        </div>
+        <div class="form-group">
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="text" id="phoneNumber" formControlName="phoneNumber" required>
+        </div>
+        <div class="form-group">
+            <label for="startTime">Availability From:</label>
+            <input type="date" id="startTime" formControlName="" required>
+        </div>
+        <div class="form-group">
+            <label for="endTime">Availability To:</label>
+            <input type="date" id="endTime" formControlName="endTime" required>
+        </div>
+        <button type="submit">Save</button>
+    </form>
+</div>

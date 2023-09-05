@@ -15,7 +15,7 @@ export class NoteService {
   public getNotes(): Observable<Note[]> {
     return this.http.get<Note[]>(`${this.apiServerUrl}/api/notes`)
   }
-  public createNote(note: Note): Observable<Note> {
-    return this.http.post<Note>(`${this.apiServerUrl}/api/notes`, note)
+  public createNote(newNote: Note,consultationId : number): Observable<Note> {
+    return this.http.post<Note>(`${this.apiServerUrl}/api/notes/${consultationId}`, newNote)
   }
 }

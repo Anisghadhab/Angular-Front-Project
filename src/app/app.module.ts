@@ -33,6 +33,7 @@ import { MyAgendaComponent } from './my-agenda/my-agenda.component';
 import { SessionServiceComponent } from './session-service/session-service.component';
 import { LogoutButtonComponent } from './logout-button/logout-button.component';
 import { DashboardButtonComponent } from './dashboard-button/dashboard-button.component';
+import { EditDoctorComponent } from './edit-doctor/edit-doctor.component';
 
 @NgModule({
     declarations: [
@@ -63,6 +64,7 @@ import { DashboardButtonComponent } from './dashboard-button/dashboard-button.co
         SessionServiceComponent,
         LogoutButtonComponent,
         DashboardButtonComponent,
+        EditDoctorComponent,
     ],
     providers: [],
     bootstrap: [AppComponent],

@@ -18,4 +18,7 @@ export class DoctorInformationService {
   public addDoctorInformation(DoctorId : any, DoctorInformation : DoctorInformation): Observable<DoctorInformation> {
     return this.http.post<DoctorInformation> (`${this.apiServerUrl}/api/doctorInformations/${DoctorId}`, DoctorInformation);
   }
+  public updateOneDoctorInformation(doctorId: any,thisDoctorInformation : DoctorInformation): Observable<DoctorInformation> {
+    return this.http.put<DoctorInformation>(`${this.apiServerUrl}/api/doctorInformations/${doctorId}`,thisDoctorInformation);
+  }
 }
