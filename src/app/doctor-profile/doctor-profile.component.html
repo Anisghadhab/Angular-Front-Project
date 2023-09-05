@@ -1,0 +1,63 @@
+<app-navbar-dashboard></app-navbar-dashboard>
+<div class="container mt-4">
+    <!-- Doctor Full Name -->
+    <h1>{{ thisDoctor.firstName }} {{ thisDoctor.lastName }}</h1>
+
+    <!-- Doctor Information Card -->
+    <div class="card mt-4">
+        <div class="card-header">
+            Doctor information
+        </div>
+        <div class="card-body">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>price:</strong> {{ thisDoctor.doctorInformation.price }}
+                </li>
+                <li class="list-group-item">
+                    <strong>Phone Number:</strong> {{ thisDoctor.doctorInformation.phoneNumber }}
+                </li>
+                <li class="list-group-item">
+                    <strong>Availability:</strong>
+                    From: {{ thisDoctor.doctorInformation.startTime | date:'EEEE, dd/MM' }}
+                    To: {{ thisDoctor.doctorInformation.endTime | date:'EEEE, dd/MM' }}
+
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Rating and Reviews Card -->
+    <div class="card mt-4">
+        <div class="card-header">
+            Rating and Reviews
+        </div>
+        <div class="card-body">
+            <!-- Display Doctor's Rating -->
+            <div class="mb-3">
+                <div *ngIf="thisDoctor.doctorReviews.length > 0">
+                    <div class="rating" *ngFor="let review of thisDoctor.doctorReviews">
+                    </div>
+                    <div class="average-rating">
+                        Average Rating: {{ calculateAverageRating(thisDoctor.doctorReviews) }}
+                    </div>
+                </div>
+                <div *ngIf="thisDoctor.doctorReviews.length === 0">
+                    No reviews available.
+                </div>
+            </div>
+
+
+            <!-- Display Patient Reviews -->
+            <h5>Patient Reviews</h5>
+            <div *ngFor="let review of thisDoctor.doctorReviews" class="mb-3">
+                <div class="mb-2">
+                    <strong>{{ review.patient.firstName }}</strong>
+                    <span class="text-muted"> - {{ review.createdAt | relativeTime }}</span>
+                    <div class="rating">{{ review.rate }}</div>
+
+                </div>
+                <p>{{ review.comment }}</p>
+            </div>
+        </div>
+    </div>
+</div>

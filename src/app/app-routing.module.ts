@@ -18,6 +18,7 @@ import { MyAgendaComponent } from './my-agenda/my-agenda.component';
 import { AuthGuard } from './auth-guard/auth-guard.component';
 import { DiscussionComponent } from './discussion/discussion.component';
 import { EditDoctorComponent } from './edit-doctor/edit-doctor.component';
+import { DoctorProfileComponent } from './doctor-profile/doctor-profile.component';
 const routes: Routes = [
   { path: "patients", component: PatientComponent, canActivate: [AuthGuard]  },
   { path: "consultations", component: ConsultationFormComponent },
@@ -36,12 +37,15 @@ const routes: Routes = [
   { path: 'doctors/agenda', component: MyAgendaComponent},
   { path: 'doctors/edit', component: EditDoctorComponent},
   { path: 'doctors/discussion/:id', component: DiscussionComponent },
+  { path: 'doctors/profile', component: DoctorProfileComponent },
+
 
 
 
 ];
 
 @NgModule({
+  
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })

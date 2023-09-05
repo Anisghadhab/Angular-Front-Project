@@ -3,7 +3,7 @@ import { Patient } from "../patient/patient";
 
 export interface Review {
     id: number;
-    review: string;
+    comment: string;
     rate: number;
     createdAt:Date;
     updatedAt:Date;

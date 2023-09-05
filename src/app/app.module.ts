@@ -25,7 +25,6 @@ import { PatientCardComponent } from './patient-card/patient-card.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { DiscussionComponent } from './discussion/discussion.component';
 import { CloseConsultationComponent } from './close-consultation/close-consultation.component';
-import { ProfileComponent } from './profile/profile.component';
 import { NavbarDashboardComponent } from './navbar-dashboard/navbar-dashboard.component';
 import { CompletedConsultationComponent } from './completed-consultation/completed-consultation.component';
 import { DeclinedConsultationComponent } from './declined-consultation/declined-consultation.component';
@@ -34,9 +33,13 @@ import { SessionServiceComponent } from './session-service/session-service.compo
 import { LogoutButtonComponent } from './logout-button/logout-button.component';
 import { DashboardButtonComponent } from './dashboard-button/dashboard-button.component';
 import { EditDoctorComponent } from './edit-doctor/edit-doctor.component';
+import { DoctorProfileComponent } from './doctor-profile/doctor-profile.component';
+import { RelativeTimePipe } from './relative-time-pipe/relative-time-pipe.component';
+import { CommonModule, DatePipe } from '@angular/common';
 
 @NgModule({
     declarations: [
+        RelativeTimePipe,
         AppComponent,
         DoctorComponent,
         ConsultationFormComponent,
@@ -56,7 +59,6 @@ import { EditDoctorComponent } from './edit-doctor/edit-doctor.component';
         NavBarComponent,
         DiscussionComponent,
         CloseConsultationComponent,
-        ProfileComponent,
         NavbarDashboardComponent,
         CompletedConsultationComponent,
         DeclinedConsultationComponent,
@@ -65,17 +67,21 @@ import { EditDoctorComponent } from './edit-doctor/edit-doctor.component';
         LogoutButtonComponent,
         DashboardButtonComponent,
         EditDoctorComponent,
+        DoctorProfileComponent,
     ],
-    providers: [],
+    providers: [
+        DatePipe, // Add DatePipe to the providers array
+    ],
     bootstrap: [AppComponent],
     imports: [
-        
+        CommonModule,
         BrowserModule,
         AppRoutingModule,
-        
+
         HttpClientModule,
         ReactiveFormsModule,
         RouterOutlet
-    ]
+    ],
+    exports: [RelativeTimePipe]
 })
 export class AppModule { }
