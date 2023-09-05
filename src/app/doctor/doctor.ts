@@ -14,7 +14,7 @@ export interface Doctor {
     confirm: string;
     createdAt:Date;
     updatedAt:Date;
-    doctorInformations: DoctorInformation;
+    doctorInformation: DoctorInformation;
     doctorConsultations: Consultation [];
     doctorReviews: Review[];
     doctorPrescriptions: Prescription [];

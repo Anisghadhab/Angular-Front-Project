@@ -36,11 +36,13 @@ export class DoctorInformationComponent {
   }
   public fetchOneDoctor (): void {
     const DoctorId = this.sessionService.getDoctorId();
+    console.log(DoctorId)
 
       this.doctorService.getOneDoctor(DoctorId).subscribe(
         (response : Doctor) => {
           this.oneDoctor = response;
-          console.log("hi",response);
+          console.log(response)
+          console.log("hi",response.doctorInformation);
         },
         (error: HttpErrorResponse)=> {
           alert(error.message)

@@ -28,6 +28,7 @@ export class PatientCardComponent implements OnInit {
     this.consultationService.getConsultationById(id).subscribe(
       (consultation:Consultation) =>{
         this.consultation = consultation;
+        console.log(consultation)
       },
       (error) =>{
         console.log(error);

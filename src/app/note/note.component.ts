@@ -12,8 +12,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class NoteComponent  {
   noteForm!: FormGroup;
-  public notes!:Note [];
-  public consultationId!:number;
+  notes!:Note [];
+  consultationId!:number;
   constructor(private fb: FormBuilder, private noteService: NoteService,    private route: ActivatedRoute
     ) {
 
@@ -25,6 +25,7 @@ export class NoteComponent  {
     this.getAllNotes();
     this.route.params.subscribe(params => {
       this.consultationId = +params['id'];
+      console.log(this.consultationId)
     })
   }
 

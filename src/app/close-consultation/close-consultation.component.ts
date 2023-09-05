@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConsultationService } from '../consultation/consultation.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Consultation } from '../consultation/consultation';
 
 @Component({
@@ -13,7 +13,9 @@ export class CloseConsultationComponent implements OnInit {
   consultationId!: number;
   constructor(
     private consultationService: ConsultationService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router // Inject the Router
+
   ) { }
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -38,6 +40,8 @@ export class CloseConsultationComponent implements OnInit {
       this.consultationService.updateConsultationStatus(this.consultation.id, 'completed').subscribe(
         (updatedConsultation: Consultation) => {
           this.consultation = updatedConsultation;
+          this.router.navigate(['/doctors/dashboard']);
+
         },
         (error) => {
           console.error(error);

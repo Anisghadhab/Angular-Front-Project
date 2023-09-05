@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./pending-consultation.component.css']
 })
 export class PendingConsultationComponent implements OnInit {
-  @Input() consultation: Consultation | undefined;
+  consultation: Consultation | undefined;
   consultationId: number | undefined; // Define consultationId to store the ID from the rout
 
   constructor(
@@ -29,10 +29,11 @@ export class PendingConsultationComponent implements OnInit {
     });
   }
 
-  fetchConsultation(id: number) {
-    this.consultationService.getConsultationById(id).subscribe(
+  fetchConsultation(consultationId: number) {
+    this.consultationService.getConsultationById(consultationId).subscribe(
       (consultation: Consultation) => {
         this.consultation = consultation;
+        console.log(consultation.patient.firstName)
       },
       (error) => {
         console.error(error);

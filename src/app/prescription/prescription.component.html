@@ -1,21 +1,29 @@
 <app-nav-bar [consultationId]="consultationId"></app-nav-bar>
-<div class="container">
-    <h2>Prescription Form</h2>
-    <form [formGroup]="prescriptionForm" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-            <label for="prescriptionFile">Upload Prescription (PDF only)</label>
-            <input type="file" id="prescriptionFile" formControlName="prescriptionFile"
-                (change)="onFileChange($event)" />
-            <small *ngIf="prescriptionForm.controls['prescriptionFile'].hasError('required')" class="text-danger">
-                Prescription file is required.
-            </small>
+<app-dashboard-button></app-dashboard-button>
+<form [formGroup]="prescriptionForm" (ngSubmit)="onSubmit()">
+    <div formArrayName="medicines">
+      <div *ngFor="let medicine of medicines.controls; let i = index">
+        <div class="medicine-group" [formGroupName]="i">
+          <div class="form-group">
+            <label for="medicineName">Medicine Name</label>
+            <input type="text" id="medicineName" formControlName="medicineName" required>
+          </div>
+          <div class="form-group">
+            <label for="morning">Morning</label>
+            <input type="number" id="morning" formControlName="morning" required>
+          </div>
+          <div class="form-group">
+            <label for="afternoon">Afternoon</label>
+            <input type="number" id="afternoon" formControlName="afternoon" required>
+          </div>
+          <div class="form-group">
+            <label for="night">Night</label>
+            <input type="number" id="night" formControlName="night" required>
+          </div>
         </div>
-        <button type="submit" class="btn btn-primary" [disabled]="!prescriptionForm.valid">Upload</button>
-    </form>
-    <div *ngIf="successMessage" class="alert alert-success mt-3">
-        {{ successMessage }}
+      </div>
     </div>
-    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
-        {{ errorMessage }}
-    </div>
-</div>
+    <button type="button" (click)="addMedicine()">Add Medicine</button>
+    <button type="submit">Create Prescription</button>
+  </form>
+  

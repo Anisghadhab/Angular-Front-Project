@@ -13,11 +13,10 @@ export class PrescriptionService {
   constructor(private http: HttpClient) {}
 
   // Upload a prescription
-  uploadPrescription(prescriptionFile: File): Observable<Prescription> {
+  createPrescription(prescriptionData: Prescription, doctorId: any, patientId : any): Observable<Prescription> {
     const formData: FormData = new FormData();
-    formData.append('prescriptionFile', prescriptionFile, prescriptionFile.name);
 
-    return this.http.post<Prescription>(`${this.apiServerUrl}/api/prescriptions/1/1`, formData);
+    return this.http.post<Prescription>(`${this.apiServerUrl}/api/prescriptions/${doctorId}/${patientId}`, prescriptionData);
   }
 
   // Get all prescriptions

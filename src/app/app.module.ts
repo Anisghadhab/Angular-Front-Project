@@ -32,6 +32,7 @@ import { DeclinedConsultationComponent } from './declined-consultation/declined-
 import { MyAgendaComponent } from './my-agenda/my-agenda.component';
 import { SessionServiceComponent } from './session-service/session-service.component';
 import { LogoutButtonComponent } from './logout-button/logout-button.component';
+import { DashboardButtonComponent } from './dashboard-button/dashboard-button.component';
 
 @NgModule({
     declarations: [
@@ -61,6 +62,7 @@ import { LogoutButtonComponent } from './logout-button/logout-button.component';
         MyAgendaComponent,
         SessionServiceComponent,
         LogoutButtonComponent,
+        DashboardButtonComponent,
     ],
     providers: [],
     bootstrap: [AppComponent],
