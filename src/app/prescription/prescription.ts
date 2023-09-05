@@ -4,8 +4,7 @@ import { Patient } from "../patient/patient";
 
 export interface Prescription {
     id: number;
-    prescriptionFile: String;
-    createdAr:Date;
+    createdAt:Date;
     updatedAt:Date;
     patient: Patient;
     doctor: Doctor;

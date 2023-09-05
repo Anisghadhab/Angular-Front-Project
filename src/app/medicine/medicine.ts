@@ -2,7 +2,7 @@ import { Prescription } from "../prescription/prescription";
 
 export interface Medicine{
     id:number;
-    medicine:string;
+    medicineName:string;
     morning:number;
     afternoon:number;
     night:number;
