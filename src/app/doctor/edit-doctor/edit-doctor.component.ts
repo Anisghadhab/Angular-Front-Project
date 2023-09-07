@@ -23,15 +23,11 @@ export class EditDoctorComponent implements OnInit  {
     private doctorService : DoctorService,
     private doctorInformationService : DoctorInformationService,
     private router: Router // Inject the Router service
-
-
-
   ) { }
   ngOnInit(): void {
     this.initDoctorForm();
     this.fetchDoctor();
   }
-
   initDoctorForm() {
     this.doctorFormInformation = this.fb.group({
       price: [null, [Validators.required]],

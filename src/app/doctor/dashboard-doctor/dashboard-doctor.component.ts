@@ -11,6 +11,7 @@ import { SessionServiceService } from 'src/app/session-service/session-service.s
   styleUrls: ['./dashboard-doctor.component.css']
 })
 export class DashboardDoctorComponent implements OnInit {
+
   public pendingConsultations: Consultation[] = [];
   public acceptedConsultations: Consultation[] = [];
 
@@ -37,5 +38,9 @@ export class DashboardDoctorComponent implements OnInit {
         alert(error.message);
       }
     );
+  }
+
+  openVideoCall(link:string): void {
+    window.open(`https://localhost:3003/r/${link}`);
   }
 }

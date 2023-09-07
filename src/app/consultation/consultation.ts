@@ -7,6 +7,7 @@ export interface Consultation {
     status: string;
     startTime: Date;
     endTime: Date;
+    link: string;
     concerns: string;
     diseases: string;
     previous: boolean;

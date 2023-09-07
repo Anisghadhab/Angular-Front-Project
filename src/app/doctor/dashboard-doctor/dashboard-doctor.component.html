@@ -16,6 +16,8 @@
                                 <th><span>Age</span></th>
                                 <th><span>Gender</span></th>
                                 <th><span>status</span></th>
+                                <th><span>Video call</span></th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -26,7 +28,7 @@
                                 </td>
                                 <td>
                                     <p>{{ consultation.createdAt | date:'MMM dd, HH:mm' }}</p>
-                                </td>   
+                                </td>
                                 <td>
                                     {{consultation.patient.patientInformation.age}}
                                 </td>
@@ -34,8 +36,12 @@
                                     {{consultation.patient.patientInformation.gender}}
                                 </td>
                                 <td>
-                                    <a [routerLink]="['/doctors/pending-consultation', consultation.id]">{{consultation.status}}</a>
+                                    <a
+                                        [routerLink]="['/doctors/pending-consultation', consultation.id]">{{consultation.status}}</a>
                                 </td>
+                                <td><button (click)="openVideoCall(consultation.link)" class="btn btn-warning">
+                                        Start Video Call
+                                    </button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -72,13 +78,14 @@
                                         <!-- {{consultation.gender}} -->
                                     </td>
                                     <td>
-                                        <a [routerLink]="['/doctors/consultation', consultation.id]">{{consultation.status}}</a>
+                                        <a
+                                            [routerLink]="['/doctors/consultation', consultation.id]">{{consultation.status}}</a>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
+            </div>
         </div>
     </div>
-</div>
