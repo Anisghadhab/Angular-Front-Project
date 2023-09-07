@@ -1,8 +1,8 @@
 import { Address } from "../address/address";
 import { Consultation } from "../consultation/consultation";
-import { DoctorInformation } from "../doctor-information/doctor-information";
 import { Prescription } from "../prescription/prescription";
 import { Review } from "../review/review";
+import { DoctorInformation } from "./doctor-information/doctor-information";
 
 export interface Doctor {
     id: number;

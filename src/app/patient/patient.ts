@@ -1,7 +1,7 @@
 import { Consultation } from "../consultation/consultation";
-import { PatientInformation } from "../patient-information/patient-information";
 import { Prescription } from "../prescription/prescription";
 import { Review } from "../review/review";
+import { PatientInformation } from "./patient-information/patient-information";
 export interface Patient {
     id: number;
     firstName:string;
