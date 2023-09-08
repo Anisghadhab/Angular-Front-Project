@@ -27,13 +27,7 @@ export class PrescriptionService {
     return this.http.get<any>(`${this.apiServerUrl}/${id}`);
   }
 
-  // Update an existing prescription
-  updatePrescription(id: number, prescriptionFile: File): Observable<any> {
-    const formData: FormData = new FormData();
-    formData.append('prescriptionFile', prescriptionFile, prescriptionFile.name);
-
-    return this.http.put<any>(`${this.apiServerUrl}/${id}`, formData);
-  }
+  
 
   // Delete a prescription by ID
   deletePrescription(id: number): Observable<void> {
