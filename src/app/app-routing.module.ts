@@ -24,14 +24,14 @@ import { DoctorProfileComponent } from './doctor/doctor-profile/doctor-profile.c
 import { LoginComponent } from './patient-side/login-patient/login.component';
 
 const routes: Routes = [
-  { path: "patients", component: PatientComponent, canActivate: [AuthGuard]  },
+  { path: "patients", component: PatientComponent},
   { path: "consultations", component: ConsultationFormComponent },
   { path: "doctors", component: DoctorComponent },
   { path: "doctors/register", component: RegisterDoctorComponent },
   { path: "doctors/login", component: LoginDoctorComponent },
   { path: 'patients/login', component: LoginComponent },
 
-  { path: 'doctors/dashboard', component: DashboardDoctorComponent, canActivate: [AuthGuard]  },
+  { path: 'doctors/dashboard', component: DashboardDoctorComponent},
   { path: 'doctors/details', component: DoctorInformationComponent },
   { path: 'doctors/pending-consultation/:id', component: PendingConsultationComponent },
   { path: 'doctors/consultation/:id', component: PatientCardComponent },
